@@ -1,0 +1,667 @@
+/* =========================================
+   Toko Azkia - style.css
+   Urutan: token, dasar, komponen, responsive
+   ========================================= */
+
+/* ---------- Design token (P05) ---------- */
+:root {
+    --color-primary: #24452f;
+    --color-primary-strong: #173021;
+    --color-accent: #8b5e3c;
+    --color-accent-strong: #6f4a2e;
+    --color-on-primary: #fffdf5;
+    --color-text: #292b25;
+    --color-muted: #5f6258;
+    --color-surface: #ffffff;
+    --color-surface-soft: #f7f4e8;
+    --color-border: #d8d0be;
+    --color-badge: #fef3c7;
+    --color-focus: #1d4ed8;
+
+    --space-1: 0.5rem;
+    --space-2: 0.75rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+
+    --radius-sm: 0.5rem;
+    --radius-md: 0.875rem;
+
+    --shadow-card: 0 0.5rem 1.5rem rgb(41 43 37 / 0.1);
+}
+
+/* ---------- Header Beranda ---------- */
+/* Header Beranda: tinggi lebih besar, teks di bagian bawah foto */
+.hero-banner.hero-tall {
+    min-height: 34rem;
+    align-items: flex-end;
+}
+
+/* Tampilkan foto dari bagian atas supaya spanduk terlihat */
+.banner-bottom {
+    object-position: center 0%;
+}
+
+/* Lapisan gelap hanya di bagian bawah, tempat teks berada */
+.hero-banner.hero-tall::after {
+    background: linear-gradient(0deg, rgb(20 35 25 / 0.92) 0%, rgb(20 35 25 / 0.75) 40%, rgb(20 35 25 / 0) 70%);
+}
+
+/* ---------- Dasar ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    color: var(--color-text);
+    background: var(--color-surface-soft);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--color-accent-strong);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-primary);
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+}
+
+p,
+li {
+    max-width: 68ch;
+}
+
+/* ---------- Skip link (P02) ---------- */
+.skip-link {
+    position: absolute;
+    top: -5rem;
+    left: var(--space-3);
+    z-index: 10;
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-on-primary);
+    background: var(--color-primary-strong);
+    border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+    top: var(--space-3);
+}
+
+/* ---------- Header, navigasi, footer ---------- */
+.site-header,
+.site-footer {
+    padding: var(--space-3) var(--space-4);
+    color: var(--color-on-primary);
+    background: var(--color-primary);
+}
+
+.site-footer {
+    margin-top: var(--space-5);
+    text-align: center;
+}
+
+.site-footer p {
+    max-width: none;
+    margin: 0;
+}
+
+.nav,
+.page {
+    width: min(100% - 2rem, 60rem);
+    margin-inline: auto;
+}
+
+.page {
+    padding-block: var(--space-5);
+}
+
+/* Baseline mobile: nav satu kolom */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+}
+
+.brand {
+    color: var(--color-on-primary);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: var(--color-on-primary);
+    text-decoration: underline;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav li {
+    margin: 0;
+}
+
+.nav li a {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    color: var(--color-on-primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+}
+
+.nav li a:hover {
+    color: var(--color-on-primary);
+    text-decoration: underline;
+}
+
+.nav a[aria-current="page"] {
+    background: rgb(255 253 245 / 0.18);
+    text-decoration: underline;
+}
+
+.nav a:focus-visible,
+.site-footer a:focus-visible {
+    outline-color: var(--color-badge);
+}
+
+/* ---------- Tombol ---------- */
+.button,
+button {
+    display: inline-block;
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-on-primary);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--color-accent-strong);
+    border: 0;
+    border-radius: var(--radius-sm);
+}
+
+.button:hover,
+button:hover {
+    color: var(--color-on-primary);
+    background: var(--color-primary);
+}
+
+/* ---------- Hero (P06: grid) ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    align-items: center;
+    margin-bottom: var(--space-5);
+    padding: var(--space-4);
+    color: var(--color-on-primary);
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+.hero h1,
+.hero p {
+    color: var(--color-on-primary);
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: var(--radius-md);
+}
+
+.eyebrow {
+    margin: 0 0 var(--space-1);
+    color: var(--color-accent);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero .eyebrow {
+    color: var(--color-badge);
+}
+
+.hero button {
+    color: var(--color-text);
+    background: var(--color-badge);
+}
+
+.hero button:hover {
+    color: var(--color-text);
+    background: #fde68a;
+}
+
+/* Hero berlatar foto (Produk, Galeri, Tentang) */
+.hero-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 18rem;
+    margin-bottom: var(--space-5);
+    overflow: hidden;
+}
+
+.banner-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lapisan gelap supaya teks tetap terbaca */
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(20 35 25 / 0.85), rgb(20 35 25 / 0.35));
+}
+
+.hero-banner .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 38rem;
+}
+
+.hero-banner h1 {
+    margin: 0 0 var(--space-2);
+    text-shadow: 0 2px 12px rgb(0 0 0 / 0.5);
+}
+
+.hero-banner .eyebrow {
+    color: #f3d7a0;
+}
+
+.hero-highlight {
+    color: #f3d7a0;
+    font-weight: 700;
+}
+
+/* Hero tanpa foto (foto menyusul) */
+.hero-plain {
+    display: block;
+    min-height: 0;
+}
+
+.hero-plain::after {
+    content: none;
+}
+
+/* ---------- Section dan info ---------- */
+.section {
+    margin-bottom: var(--space-5);
+}
+
+.price {
+    color: var(--color-accent-strong);
+    font-weight: 800;
+}
+
+/* ---------- Kartu produk dan media ---------- */
+
+/* Grid satu kolom di HP */
+.product-list,
+.product-grid,
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+
+/* Tampilan kartu (produk, figure, tabel, form) */
+.product-card,
+.media-card,
+table,
+form {
+    margin-block: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+/* Di dalam grid, jarak diatur oleh gap */
+.product-list .product-card,
+.product-grid .product-card,
+.product-grid .media-card,
+.gallery-grid .media-card {
+    margin-block: 0;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.product-card img {
+    width: 100%;
+    margin-bottom: var(--space-3);
+    border-radius: var(--radius-sm);
+}
+
+.product-card h3 {
+    margin: 0 0 var(--space-1);
+}
+
+.product-card p {
+    margin: 0 0 var(--space-3);
+}
+
+.product-badge {
+    align-self: flex-start;
+    margin-bottom: var(--space-2);
+    padding: 0.25rem var(--space-2);
+    color: var(--color-primary-strong);
+    font-size: 0.875rem;
+    font-weight: 800;
+    background: var(--color-badge);
+    border-radius: 999px;
+}
+
+.card-actions {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+figure {
+    margin-inline: 0;
+}
+
+/* Foto produk: dipotong seragam supaya kartu rata */
+.product-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* Tempat foto yang belum tersedia */
+.photo-placeholder {
+    display: grid;
+    place-items: center;
+    min-height: 12rem;
+    padding: var(--space-4);
+    color: var(--color-muted);
+    text-align: center;
+    background: var(--color-surface);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.photo-placeholder p {
+    margin: 0;
+}
+
+.media-card {
+    margin-inline: 0;
+}
+
+.media-card img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+}
+
+figcaption,
+caption {
+    color: var(--color-muted);
+}
+
+figcaption {
+    margin-top: var(--space-2);
+}
+
+figcaption strong {
+    display: block;
+    color: var(--color-primary);
+}
+
+/* ---------- Tabel (P03, P07) ---------- */
+.table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+.table-scroll table {
+    min-width: 40rem;
+}
+
+table {
+    width: 100%;
+    margin-block: 0;
+    border-collapse: collapse;
+    border-radius: 0;
+}
+
+caption {
+    margin-bottom: var(--space-2);
+    font-weight: 700;
+    text-align: left;
+}
+
+th,
+td {
+    padding: var(--space-2);
+    text-align: left;
+    border: 1px solid var(--color-border);
+}
+
+thead th {
+    color: var(--color-on-primary);
+    background: var(--color-primary);
+}
+
+tbody th {
+    background: var(--color-surface-soft);
+}
+
+/* ---------- Audio ---------- */
+audio {
+    display: block;
+    width: 100%;
+    max-width: 38rem;
+}
+
+/* ---------- Form (P04) ---------- */
+.field {
+    margin-bottom: var(--space-3);
+}
+
+.field label,
+legend {
+    display: block;
+    margin-bottom: var(--space-1);
+    font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: var(--space-2);
+    color: inherit;
+    font: inherit;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.field textarea {
+    resize: vertical;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+fieldset {
+    margin: 0 0 var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+fieldset label {
+    display: block;
+    margin-bottom: var(--space-1);
+}
+
+legend {
+    padding-inline: var(--space-1);
+    color: var(--color-primary);
+}
+
+#preview-form {
+    padding: var(--space-3);
+    white-space: pre-wrap;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+/* ---------- Output JavaScript (P09) ---------- */
+.js-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-4);
+}
+
+.js-product-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.js-product-card h3,
+.js-product-card p {
+    margin: 0;
+}
+
+.stock-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-block-start: var(--space-1);
+    padding: 0.25rem 0.6rem;
+    color: #166534;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: #dcfce7;
+    border-radius: 999px;
+}
+
+.stock-badge.warning {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.stock-badge.empty {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+/* ---------- Responsive (P07, mobile-first) ---------- */
+@media (min-width: 42rem) {
+    .nav ul {
+        flex-direction: row;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 48rem) {
+    .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+        padding: var(--space-5);
+    }
+
+    .hero.hero-wide {
+        grid-template-columns: 1fr;
+    }
+
+    .product-list,
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 60rem) {
+    .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .product-list,
+    .product-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Teks rata kiri-kanan di halaman Tentang Kami */      
+.teks-rata p {
+    max-width: none;
+    text-align: justify;
+    hyphens: auto;
+}
+
+@media (max-width: 41.99rem) {
+    .teks-rata p {
+        text-align: left;
+    }
+}

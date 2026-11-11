@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Galeri Toko Azkia - Website UMKM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <!-- Link untuk lompat ke konten utama -->
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
+    <!-- Header dan navigasi -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigasi utama">
+            <a class="brand" href="index.html">Toko Azkia</a>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a aria-current="page" href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="konten" class="page">
+
+        <!-- Banner (header galeri menyusul) -->
+        <section class="hero hero-banner hero-plain" aria-labelledby="galeri-title">
+            <div class="hero-content">
+                <h1 id="galeri-title">Galeri Toko Azkia</h1>
+                <p>Lihat produk dan suasana yang ada di Toko Azkia.</p>
+            </div>
+        </section>
+
+        <!-- Foto produk -->
+        <section class="section" aria-labelledby="media-title">
+            <h2 id="media-title">Produk Toko Azkia</h2>
+            <div class="gallery-grid">
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/good-day-latte-original.jpg" width="1005" height="1100" loading="lazy" alt="Sachet Good Day Latte Original di samping segelas kopi latte hangat">
+                    <figcaption>
+                        <strong>Good Day Latte Original</strong>
+                        <span class="price">Rp5.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/good-day-latte-butterscotch.jpg" width="825" height="1100" loading="lazy" alt="Sachet Good Day Latte Butterscotch di samping segelas kopi latte dengan saus karamel">
+                    <figcaption>
+                        <strong>Good Day Latte Butterscotch</strong>
+                        <span class="price">Rp5.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/good-day-cappuccino.jpg" width="825" height="1100" loading="lazy" alt="Sachet Good Day Cappuccino di samping segelas cappuccino dengan taburan cokelat">
+                    <figcaption>
+                        <strong>Good Day Cappuccino</strong>
+                        <span class="price">Rp5.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/kapal-api-special-mix.jpg" width="1100" height="733" loading="lazy" alt="Deretan sachet kopi Kapal Api Special Mix dengan secangkir kopi hitam">
+                    <figcaption>
+                        <strong>Kapal Api Special Mix</strong>
+                        <span class="price">Rp4.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/mama-lemon.jpg" width="1100" height="825" loading="lazy" alt="Tangan memegang kemasan refill sabun cuci piring Mama Lemon jeruk nipis 950 gram">
+                    <figcaption>
+                        <strong>Mama Lemon</strong>
+                        <span class="price">Rp10.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/rapika.jpg" width="1100" height="825" loading="lazy" alt="Empat kemasan So Klin Rapika Biang berwarna biru, kuning, hijau tosca, dan merah muda">
+                    <figcaption>
+                        <strong>Rapika</strong>
+                        <span class="price">Rp8.000</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Foto suasana toko (menyusul) -->
+        <section class="section" aria-labelledby="suasana-title">
+            <h2 id="suasana-title">Suasana Toko</h2>
+            <div class="photo-placeholder" role="img" aria-label="Foto suasana Toko Azkia belum tersedia">
+                <p>Foto suasana toko akan segera hadir.</p>
+            </div>
+        </section>
+
+        <!-- Audio -->
+        <section class="section" aria-labelledby="audio-title">
+            <h2 id="audio-title">Audio Suasana Toko</h2>
+            <p id="audio-note">Dengarkan suasana santai dari Toko Azkia.</p>
+            <audio controls preload="metadata" aria-describedby="audio-note">
+                <source src="assets/audio/suasana-kedai.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung pemutar audio.
+            </audio>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Toko Azkia. Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>

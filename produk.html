@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produk Toko Azkia - Website UMKM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <!-- Link untuk lompat ke konten utama -->
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
+    <!-- Header dan navigasi -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigasi utama">
+            <a class="brand" href="index.html">Toko Azkia</a>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a aria-current="page" href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="konten" class="page">
+
+        <!-- Banner -->
+        <section class="hero hero-banner hero-plain" aria-labelledby="produk-title">
+            <div class="hero-content">
+                <h1 id="produk-title">Produk Toko Azkia</h1>
+                <p>Kopi sachet, sabun cuci piring, pelembut pakaian, buku tulis, ATK, dan kebutuhan harian lainnya.</p>
+            </div>
+        </section>
+
+        <!-- Kategori -->
+        <section class="section" aria-labelledby="kategori-title">
+            <h2 id="kategori-title">Kategori Produk</h2>
+            <ul>
+                <li>Kopi sachet</li>
+                <li>Kebutuhan rumah tangga</li>
+                <li>Buku tulis dan ATK (daftar produk menyusul)</li>
+            </ul>
+        </section>
+
+        <!-- Produk dari data JavaScript (P09) -->
+        <section class="section" aria-labelledby="produk-dinamis-title">
+            <p class="eyebrow">Katalog Toko Azkia</p>
+            <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
+            <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
+            <div id="produk-dinamis" class="js-product-grid"></div>
+        </section>
+
+        <!-- Foto produk -->
+        <section class="section" aria-labelledby="foto-produk-title">
+            <h2 id="foto-produk-title">Foto Produk</h2>
+            <div class="product-grid">
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/good-day-latte-original.jpg" width="1005" height="1100" loading="lazy" alt="Sachet Good Day Latte Original di samping segelas kopi latte hangat">
+                    <figcaption>
+                        <strong>Good Day Latte Original</strong>
+                        <span class="price">Rp5.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/good-day-latte-butterscotch.jpg" width="825" height="1100" loading="lazy" alt="Sachet Good Day Latte Butterscotch di samping segelas kopi latte dengan saus karamel">
+                    <figcaption>
+                        <strong>Good Day Latte Butterscotch</strong>
+                        <span class="price">Rp5.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/good-day-cappuccino.jpg" width="825" height="1100" loading="lazy" alt="Sachet Good Day Cappuccino di samping segelas cappuccino dengan taburan cokelat">
+                    <figcaption>
+                        <strong>Good Day Cappuccino</strong>
+                        <span class="price">Rp5.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/kapal-api-special-mix.jpg" width="1100" height="733" loading="lazy" alt="Deretan sachet kopi Kapal Api Special Mix dengan secangkir kopi hitam">
+                    <figcaption>
+                        <strong>Kapal Api Special Mix</strong>
+                        <span class="price">Rp4.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/mama-lemon.jpg" width="1100" height="825" loading="lazy" alt="Tangan memegang kemasan refill sabun cuci piring Mama Lemon jeruk nipis 950 gram">
+                    <figcaption>
+                        <strong>Mama Lemon</strong>
+                        <span class="price">Rp10.000</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img class="product-photo" src="assets/images/rapika.jpg" width="1100" height="825" loading="lazy" alt="Empat kemasan So Klin Rapika Biang berwarna biru, kuning, hijau tosca, dan merah muda">
+                    <figcaption>
+                        <strong>Rapika</strong>
+                        <span class="price">Rp8.000</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Tabel harga -->
+        <section class="section" aria-labelledby="harga-title">
+            <h2 id="harga-title">Daftar Harga</h2>
+            <div class="table-scroll" role="region" aria-labelledby="daftar-harga-caption" tabindex="0">
+                <table>
+                    <caption id="daftar-harga-caption">Daftar harga produk Toko Azkia</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Produk</th>
+                            <th scope="col">Harga</th>
+                            <th scope="col">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Good Day Latte Original</th>
+                            <td>Rp5.000</td>
+                            <td>Minuman serbuk rasa kopi latte varian original, kemasan 22 g.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Good Day Latte Butterscotch</th>
+                            <td>Rp5.000</td>
+                            <td>Minuman serbuk rasa kopi latte varian butterscotch, kemasan 22 g.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Good Day Cappuccino</th>
+                            <td>Rp5.000</td>
+                            <td>Minuman serbuk kopi cappuccino dengan butiran cokelat (cocoa granules).</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kapal Api Special Mix</th>
+                            <td>Rp4.000</td>
+                            <td>Kopi bubuk dengan gula varian Special Mix dalam kemasan sachet.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mama Lemon</th>
+                            <td>Rp10.000</td>
+                            <td>Sabun cuci piring cair aroma jeruk nipis, kemasan refill 950 g.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rapika</th>
+                            <td>Rp8.000</td>
+                            <td>Pelembut dan pewangi pakaian So Klin Rapika Biang kemasan 60 ml. Pilihan varian aroma bisa ditanyakan lewat WhatsApp.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Toko Azkia. Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>

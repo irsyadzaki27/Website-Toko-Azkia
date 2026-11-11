@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontak Toko Azkia - Website UMKM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <script src="js/form.js" defer></script>
+</head>
+<body>
+    <!-- Link untuk lompat ke konten utama -->
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
+    <!-- Header dan navigasi -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigasi utama">
+            <a class="brand" href="index.html">Toko Azkia</a>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a aria-current="page" href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="konten" class="page">
+        <h1>Kontak Toko Azkia</h1>
+        <p>Silakan kirim pertanyaan tentang produk, pesanan, atau kerja sama.</p>
+
+        <!-- Informasi kontak -->
+        <section class="section" aria-labelledby="info-title">
+            <h2 id="info-title">Informasi Kontak</h2>
+            <ul>
+                <li><strong>Alamat:</strong> Jl. RE. Martadinata, Pesalakan (sebelah TK Asiyah)</li>
+                <li><strong>Kota:</strong> Batang, Jawa Tengah</li>
+                <li><strong>Jam layanan:</strong> Senin-Sabtu, 08.00-22.00 WIB</li>
+                <li><strong>WhatsApp:</strong> <a href="https://wa.me/6282225126027">Hubungi kami melalui WhatsApp</a></li>
+            </ul>
+        </section>
+
+        <!-- Form kontak -->
+        <section aria-labelledby="form-title">
+            <h2 id="form-title">Form Kontak</h2>
+            <form id="form-kontak" action="#" method="post">
+                <div class="field">
+                    <label for="nama">Nama lengkap</label>
+                    <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3">
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                    <label for="whatsapp">Nomor WhatsApp</label>
+                    <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" required>
+                </div>
+                <div class="field">
+                    <label for="paket">Produk yang diminati</label>
+                    <select id="paket" name="paket" required>
+                        <option value="">Pilih produk</option>
+                        <option value="Good Day Latte Original">Good Day Latte Original</option>
+                        <option value="Good Day Latte Butterscotch">Good Day Latte Butterscotch</option>
+                        <option value="Good Day Cappuccino">Good Day Cappuccino</option>
+                        <option value="Kapal Api Special Mix">Kapal Api Special Mix</option>
+                        <option value="Mama Lemon">Mama Lemon</option>
+                        <option value="Rapika">Rapika</option>
+                    </select>
+                </div>
+                <fieldset>
+                    <legend>Topik pertanyaan</legend>
+                    <label><input type="radio" name="topik" value="produk" required> Informasi produk</label>
+                    <label><input type="radio" name="topik" value="pesanan"> Status pesanan</label>
+                    <label><input type="radio" name="topik" value="kerja-sama"> Kerja sama</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Waktu yang nyaman untuk dihubungi</legend>
+                    <label><input type="radio" name="waktu" value="Pagi (08.00-12.00)" required> Pagi (08.00-12.00)</label>
+                    <label><input type="radio" name="waktu" value="Siang (12.00-17.00)"> Siang (12.00-17.00)</label>
+                    <label><input type="radio" name="waktu" value="Malam (17.00-22.00)"> Malam (17.00-22.00)</label>
+                </fieldset>
+                <div class="field">
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
+                </div>
+                <button type="submit">Tampilkan Preview</button>
+            </form>
+        </section>
+
+        <!-- Preview data form -->
+        <section aria-labelledby="preview-title">
+            <h2 id="preview-title">Preview Data</h2>
+            <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol dikirim.</pre>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Toko Azkia. Semua hak dilindungi.</p>
+    </footer>
+
+</body>
+</html>
