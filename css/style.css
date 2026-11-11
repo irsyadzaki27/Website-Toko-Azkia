@@ -270,7 +270,7 @@ button:hover {
     background: #fde68a;
 }
 
-/* Hero berlatar foto (Produk, Galeri, Tentang) */
+/* ---------- Hero berlatar foto (Produk, Galeri, Tentang) ---------- */
 .hero-banner {
     position: relative;
     display: flex;
@@ -280,6 +280,7 @@ button:hover {
     overflow: hidden;
 }
 
+/* Pengaturan gambar banner umum */
 .banner-image {
     position: absolute;
     inset: 0;
@@ -296,17 +297,20 @@ button:hover {
     background: linear-gradient(90deg, rgb(20 35 25 / 0.85), rgb(20 35 25 / 0.35));
 }
 
+/* Posisi Konten */
 .hero-banner .hero-content {
     position: relative;
     z-index: 1;
     max-width: 38rem;
 }
 
+/* Judul Banner */
 .hero-banner h1 {
     margin: 0 0 var(--space-2);
     text-shadow: 0 2px 12px rgb(0 0 0 / 0.5);
 }
 
+/* Warna Teks Tambahan */
 .hero-banner .eyebrow {
     color: #f3d7a0;
 }
@@ -314,6 +318,44 @@ button:hover {
 .hero-highlight {
     color: #f3d7a0;
     font-weight: 700;
+}
+
+/* ---------- Khusus Header Produk ---------- */
+.hero-banner.hero-produk {
+    min-height: 0;
+    aspect-ratio: 766 / 510;
+    padding: 2rem;
+    background: #f7f4e8;
+    border-radius: var(--radius-md);
+}
+
+/* Menampilkan seluruh foto tanpa terpotong */
+.hero-banner.hero-produk .banner-image {
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Lapisan gelap khusus produk */
+.hero-banner.hero-produk::after {
+    background: linear-gradient(
+        90deg,
+        rgb(23 48 33 / 0.65),
+        rgb(23 48 33 / 0.2),
+        transparent
+    );
+}
+
+/* Kotak tulisan produk */
+.hero-banner.hero-produk .hero-content {
+    padding: 1.5rem;
+    background: rgb(23 48 33 / 0.82);
+    border-radius: 14px;
+}
+
+/* Warna tulisan produk */
+.hero-banner.hero-produk h1,
+.hero-banner.hero-produk p {
+    color: #fffdf5;
 }
 
 /* Hero tanpa foto (foto menyusul) */
